@@ -6,10 +6,6 @@
   <li>{{ $support->status }}</li>
 </ul>
 
-<form action="{{ route('supports.delete', $support->id) }}" method="post">
-  @csrf()
-  @method('DELETE')
-  <button type="submit">
-    Deletar
-  </button>
-</form>
+<x-delete>
+  @slot('support', $support)
+</x-delete>
